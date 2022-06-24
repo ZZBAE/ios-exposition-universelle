@@ -1,8 +1,8 @@
 
 # 제목: 만국박람회 프로젝트
 
-### 프로젝트 소개:
-프로젝트 기간 : 2022-06-13 ~ 2022-06-24
+### 프로젝트 저장소
+>프로젝트 기간 : 2022-06-13 ~ 2022-06-24
 소개: TableView, ScrollView 와 JSON 데이터를 활용하여 만국 박람회 전시작을 볼 수 있는 어플리케이션의 제작
 **리뷰어** : [**제이슨**](https://github.com/ehgud0670)
 
@@ -10,10 +10,9 @@
     
 | 재재 | 보리사랑 |
 |:---:|:---:|
-|![](https://i.imgur.com/NffqjhR.png)|<img src=https://i.imgur.com/TeCoRmz.jpg width=320>|
+|<img src = "https://i.imgur.com/NffqjhR.png" width = "75%" height = "30%">|<img src = "https://i.imgur.com/TeCoRmz.jpg" width="25%" height = "20%">|
 |[Github](https://github.com/ZZBAE)|[Github](https://github.com/yusw10)|
     
-
 
 ---
 
@@ -36,17 +35,26 @@
   - 첫번째 화면의 기초 레이아웃 설정(ScrollView)
   - 첫번째 화면 기능 구현(ScrollView 활용 및 박람회 정보가 담긴 JSON Data 디코딩)
   
-- **2022-06-17(금)**
+- **2022-06-17(금)** - STEP2 PR
   - 두번째 화면인 박람회 전시물품 목록 화면 TableView기본 레이아웃 구현(예정)
-  - 두번째 화면인 박람회 전시물품 목록 화면 TableViewCell 프로토타입 기본 레이아웃 구현(예정)
-  - 두번째 화면인 박람회 전시물품 목록 화면 기능 구현(예정)
+  - 두번째 화면인 박람회 전시물품 목록 화면 TableViewCell 프로토타입 기본 레이아웃 구현
+  - 두번째 화면인 박람회 전시물품 목록 화면 기능 구현
+  - 세번째 화면인 박람회 세부정보 화면 기능 구현
+  - Readme.md 작성
 
 ### Week 2
-- **2022-06-20(월)**
+- **2022-06-20(월)** - STEP2 Merged
+  - STEP2 Comment 관련하여 수정
 - **2022-06-21(화)**
-- **2022-06-22(수)**
+  - 첫번째 화면의 AutoLayout 수정
+- **2022-06-22(수)** - STEP3 PR
+  - 두번째, 세번째 화면의 AutoLayout 및 portrait 설정 완료
+  - pull request
 - **2022-06-23(목)**
+  - 휴식
 - **2022-06-24(금)**
+  - STEP3 Comment 관련 수정
+  - Readme.md 작성
 
 ---
 
@@ -55,50 +63,51 @@
 ### 주요 기능
 - JSON Data의 Decoding
 - Scroll View를 활용하여 설명이 길어져도 내용을 스크롤링하여 전부 출력 가능
-추후 추가 예정
+- Table View를 활용하여 전시품 목록들을 리스트화 하여 출력 가능
+- AutoLayout을 활용하여 디바이스가 달라져도 레이아웃이 구성되게 조정
+- Dynamic size를 적용
 
-### 실행 화면(기능 설명)
-1. **만국 박람회 소개 화면**
-2. **한국의 전시 물품 목록 화면**
-3. **전시 품목 상세 화면**
-추후 추가 예정
-
----
-
-## STEP 1
-
-### STEP1 고민한 점 
-
-**제이슨 리뷰**
-
-- 소스 파일들을 어떤 폴더로 정리하시는지 궁금합니다. MVC를 예로 들면 모델끼리, 뷰끼리, 컨트롤러끼리 묶는지,아니면 한 뷰 컨트롤러가 담당하는 화면별로 MVC를 하나로 묶는지, 어떤 방식으로 파일을 계층화해서 정리하시는지 궁금합니다.
- 
->  말씀주신것처럼 모델, 뷰, 컨트롤러끼리 묶는 경우도 있고 화면별로 모델, 뷰, 컨트롤러 폴더를 따로 묶는 경우도 있습니다.
-화면이 너무 많아지다 보면 후자가 좀 더 파일 파악하기는 수월하더라고요. 그럼 고민해보시고 그룹 잘 나눠보시기 바랍니다 :)
-
-- 포크해서 클론받은 작업물 중에 items.json을 구현해주었는데, Contents.json도 해주어야하는지 의문이였습니다. 해주지 않아도 된다면 이 Contents.json은 어떤 역할을 하는 건지 궁금합니다.
-
->Contents.json 도 결국 화면에서 쓰인다면 같이 모델링 작업 해주시면 좋습니다. 저의 경우에는 서버 api 로 내려오는 response들을 하나의 브랜치로 모두 처리했었는데 이러면 한꺼번에 모델링 처리하는 거라 나중에 다시 모델링 작업을 해줄 필요가 없어 좋았습니다. 따라서 같이 작업해주시면 좋을 듯 하네용 😄
+### 구현 기능
+- **Util**
+    - JsonDataDecoding : JsonData의 Decoding을 구현
+    - NavigationItemManager : Navigation Bar의 title 과 button 설정
+- **Models**
+    - ExpoItemElement : 전시회 품목별 데이터 타입
+    - Exposition : 전시회 정보 데이터 타입
+- **View**
+    - ExpoMenuTableViewCell : 전시품목 목록 화면 구성
+- **Controller**
+    - ExpoHomeViewController : 만국 박람회 소개 화면 구성
+    - ExpoMenuViewController : 한국의 전시 물품 목록 화면 구성
+    - DetailViewController : 전시 품목 상세 설명 화면 구성
+- **ExpoItemModelsTests**
+    - ExpoItemModelsTests : Json 데이터 디코딩을 확인하기 위한 테스트 클래스
 
 
-### STEP1 트러블 슈팅
+### 실행 화면 (화면 별)
+|**만국 박람회 소개 화면**|**한국의 전시 물품 목록 화면**|**전시 품목 상세 화면**
+|:------:|:------:|:------:|
+|![](https://i.imgur.com/2YQswtZ.gif)|![](https://i.imgur.com/LqY1AjF.gif)|![](https://i.imgur.com/2QQMybi.gif)|
 
-**JSON Data Decoding Test Code 작성에 관하여**
-
-**제이슨 리뷰 중**
-> 테스트 코드로 JSON 데이터가 모델로 잘 변환되는지 이번 PR에서 꼭 반영해주세요.</br>그래야 제가 리뷰어로서 어떤 데이터를 파싱하시는지 좀 더 파악이 될 것 같고 이해가 될 것 같아요.</br>그리고 여러분도 여러분이 작성하신 모델이 잘 파싱되는지도 확신할 수 있어서 안심이 되실 겁니다.
-
-- 제이슨의 리뷰를 반영하여 테스트 코드를 작성하면, 어떤 JSON 데이터를 모델로 변환이 되는건지 확인할 수 있다는 장점을 생각하게 되었고 기존 step1에서 test code를 추가해주었다. 코드를 작성 후 간단하게 테스트를 해보면서 assets에 있는 JSON데이터가 잘 변환되는 것을 확인할 수 있었습니다. 또한 다음 스텝을 진행하면서 오류가 생긴다면, 이 부분에서는 따로 고칠 점이 없으니 다른 부분을 먼저 확인함으로써 프로젝트 진행시 더 원활한 진행이 가능할 것을 배웠습니다.
+### 실행 화면 (Dynamice Size 적용 시)
+|**만국 박람회 소개 화면**|**한국의 전시 물품 목록 화면**|**전시 품목 상세 화면**
+|:------:|:------:|:------:|
+|![](https://i.imgur.com/4Badyvf.gif)|![](https://i.imgur.com/ndxA9vk.gif)|![](https://i.imgur.com/Ndxvx3c.gif)|
 
 
 ---
-## STEP2
 
-### STEP2 고민한 점
 
-**ScrollView AutoLayout**
+## [STEP 1 - 데이터 타입 정의](https://github.com/ZZBAE/ios-exposition-universelle/blob/step3/Docs/Step1.md)
 
-추후 작성예정??
+---
+
+## [STEP 2 - 전체 화면 UI 구성](https://github.com/ZZBAE/ios-exposition-universelle/blob/step3/Docs/Step2.md)
+
+---
+
+## [STEP 3 - AutoLayout 설정](https://github.com/ZZBAE/ios-exposition-universelle/blob/step3/Docs/Step3.md)
+
 
 ---
 
