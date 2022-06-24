@@ -10,7 +10,7 @@
     
 | 재재 | 보리사랑 |
 |:---:|:---:|
-|<img src = "https://i.imgur.com/NffqjhR.png" width = "75%" height = "30%">|<img src = "https://i.imgur.com/TeCoRmz.jpg" width="25%" height = "20%">|
+|<img src = "https://i.imgur.com/NffqjhR.png" width = "300" height = "300">|<img src = "https://i.imgur.com/TeCoRmz.jpg" width = "220" height = "300">|
 |[Github](https://github.com/ZZBAE)|[Github](https://github.com/yusw10)|
     
 
